@@ -1,21 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HiveReport_bot.Handlers;
-
-namespace HiveReport_bot.Services;
-
-using HiveReport_bot.Handlers;
+﻿using HiveReport_bot.Handlers;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Telegram.Bot;
 using Telegram.Bot.Polling;
-using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
+
+namespace HiveReport_bot.Services;
 
 public class TelegramBotService : IHostedService
 {
@@ -33,8 +22,7 @@ public class TelegramBotService : IHostedService
     {
         _cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
 
-        // Удаляем Webhook перед Long Polling
-        await _botClient.DeleteWebhookAsync();
+       await _botClient.DeleteWebhookAsync();
 
         _botClient.StartReceiving(
             _updateHandler.HandleUpdateAsync,
@@ -42,6 +30,7 @@ public class TelegramBotService : IHostedService
             new ReceiverOptions { AllowedUpdates = Array.Empty<UpdateType>() },
             _cts.Token
         );
+
 
         Console.WriteLine("Бот запущен!");
     }

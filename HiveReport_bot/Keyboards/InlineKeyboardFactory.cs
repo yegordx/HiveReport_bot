@@ -34,7 +34,7 @@ public static class InlineKeyboardFactory
             new [] { InlineKeyboardButton.WithCallbackData("Перелік документів для КЕП", "documents_for_CES") },
             new [] { InlineKeyboardButton.WithCallbackData("Як продовжити підпис онайн", "prolongation_CES") },
             new [] { InlineKeyboardButton.WithCallbackData("Як зареєструвати КЕП в ДПС\r\n", "registration_CES") },
-            new [] { InlineKeyboardButton.WithCallbackData("Термінологія", "terminology") },
+            new [] { InlineKeyboardButton.WithCallbackData("Термінологія", "terminology_CES") },
             new [] { InlineKeyboardButton.WithCallbackData("Назад", "get_info") }
         }),
         "documents_for_CES" => new InlineKeyboardMarkup(new[]

@@ -15,7 +15,7 @@ class Program
         var host = Host.CreateDefaultBuilder(args)
             .ConfigureServices((context, services) =>
             {
-                services.AddSingleton<ITelegramBotClient>(new TelegramBotClient("7675831655:AAEKgcV6b6FeVdPFEOWcnK44_-FkwhFxBQ0"));
+                services.AddSingleton<ITelegramBotClient>(new TelegramBotClient("token"));
 
                 services.AddSingleton<UserStateService>();
                 services.AddSingleton<UpdateHandler>();
